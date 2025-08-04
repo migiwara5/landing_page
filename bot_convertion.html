@@ -16,6 +16,8 @@
       overflow: visible;
     }
     body {
+      position: relative;
+      z-index: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -80,13 +82,5 @@
       document.body.appendChild(iframe);
     });
   </script>
-  <style>
-    * {
-      isolation: isolate;
-    }
-    body {
-      isolation: unset !important;
-    }
-  </style>
 </body>
 </html>
