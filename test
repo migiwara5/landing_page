@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Bot</title>
+</head>
+<body>
+  <h1>Hello world</h1>
+
+  <script>
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd';
+    iframe.style.position = 'fixed';
+    iframe.style.bottom = '20px';
+    iframe.style.right = '20px';
+    iframe.style.width = '100px';
+    iframe.style.height = '100px';
+    iframe.style.zIndex = '999999999';
+    iframe.style.border = 'none';
+    document.body.appendChild(iframe);
+  </script>
+</body>
+</html>
