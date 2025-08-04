@@ -115,6 +115,25 @@
       border-radius: 6px;
       cursor: pointer;
     }
+    @keyframes popIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+    body.dark #popup .popup-content {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+body.dark #popup button {
+  background: #374151 !important;
+  color: #f9fafb !important;
+}
   </style>
   <script>
     if (localStorage.getItem('theme') === 'dark') {
@@ -141,18 +160,66 @@
     <p>Créez un chatbot GPT en quelques secondes — sans coder.</p>
     <button class="cta" onclick="openPopup()">Tester le bot</button>
 
-<!-- Pop-up de sélection -->
-<div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; display:flex; justify-content:center; align-items:center;">
-  <div style="background:white; padding:2rem; border-radius:10px; text-align:center; max-width:90%; width:400px;">
-    <h2 style="margin-bottom:1rem;">Choisissez un cas d’usage</h2>
-    <button onclick="goTo('Boulangerie')" style="margin:0.5rem;">🥖 Boulangerie</button>
-    <button onclick="goTo('shop')" style="margin:0.5rem;">🛒 E-commerce</button>
-    <button onclick="goTo('Coach')" style="margin:0.5rem;">🧠 Coach</button>
-    <button onclick="goTo('Convince')" style="margin:0.5rem;">💡 Pourquoi adopter un bot</button>
-    <br><br>
-    <button onclick="closePopup()" style="margin-top:1rem;">Fermer</button>
+<!-- Pop-up de sélection (stylée) -->
+<!-- Pop-up stylée + bouton de fermeture + click extérieur -->
+<div id="popup" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+" onclick="closePopupOutside(event)">
+  <div class="popup-content" style="
+    position: relative;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 90%;
+    width: 420px;
+    animation: popIn 0.3s ease-out;
+  " onclick="event.stopPropagation()">
+
+    <button onclick="closePopup()" style="
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #666;
+    ">✖</button>
+
+    <h2 style="margin-bottom: 1.5rem; font-size: 1.5rem;">🎯 Choisissez un cas d’usage</h2>
+
+    <button onclick="goTo('Boulangerie')" style="margin: 0.5rem; padding: 0.8rem 1.2rem; background: #6366f1; color: white; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer;">
+      🥖 Boulangerie
+    </button><br>
+
+    <button onclick="goTo('shop')" style="margin: 0.5rem; padding: 0.8rem 1.2rem; background: #10b981; color: white; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer;">
+      🛒 E-commerce
+    </button><br>
+
+    <button onclick="goTo('Coach')" style="margin: 0.5rem; padding: 0.8rem 1.2rem; background: #f59e0b; color: white; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer;">
+      🧠 Coach
+    </button><br>
+
+    <button onclick="goTo('Convince')" style="margin: 0.5rem; padding: 0.8rem 1.2rem; background: #3b82f6; color: white; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer;">
+      💡 Pourquoi adopter un bot
+    </button>
+
   </div>
 </div>
+
+
 
   </header>
 
@@ -205,8 +272,11 @@
       }
     });
   function openPopup() {
-    document.getElementById("popup").style.display = "flex";
-  }
+  const popup = document.getElementById("popup");
+  popup.style.display = "flex";
+  popup.scrollTop = 0; // au cas où il y aurait un décalage visuel mobile
+}
+
 
   function closePopup() {
     document.getElementById("popup").style.display = "none";
@@ -221,6 +291,12 @@
     };
     window.location.href = urls[type];
   }
+    function closePopupOutside(event) {
+  if (event.target.id === "popup") {
+    closePopup();
+  }
+}
+
   </script>
 </body>
 </html>
