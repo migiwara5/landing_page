@@ -54,43 +54,6 @@
     .product button:hover {
       background-color: #0056b3;
     }
-
-    /* Bot styles */
-    #chatbot-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      background-color: #007bff;
-      border-radius: 50%;
-      border: none;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
-      z-index: 1000000;
-    }
-
-    #chatbot-frame {
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 420px;
-      height: 580px;
-      max-height: 80vh;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      z-index: 999999;
-      display: none;
-    }
-
-    @media screen and (max-width: 600px) {
-      #chatbot-frame {
-        width: 95%;
-        right: 2.5%;
-      }
-    }
   </style>
 </head>
 <body>
@@ -121,26 +84,35 @@
   </div>
 </section>
 
-<!-- Bulle d'ouverture du bot -->
-<button id="chatbot-toggle">💬</button>
-
-<!-- Iframe masquée du bot -->
-<iframe
-  id="chatbot-frame"
-  src="https://plug-in-chat-gpt.lovable.app/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd"
-  allow="clipboard-write"
-></iframe>
-
+<!-- Script exact fourni par toi -->
 <script>
-  const toggleBtn = document.getElementById('chatbot-toggle');
-  const chatbotFrame = document.getElementById('chatbot-frame');
-  let isOpen = false;
+(function() {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd';
+  iframe.style.position = 'fixed';
+  iframe.style.bottom = '0px';
+  iframe.style.right = '0px';
+  iframe.style.width = '100px';
+  iframe.style.height = '100px';
+  iframe.style.border = 'none';
+  iframe.style.zIndex = '999999';
+  iframe.style.pointerEvents = 'auto';
+  iframe.style.background = 'transparent';
+  iframe.allow = 'clipboard-write';
 
-  toggleBtn.addEventListener('click', () => {
-    isOpen = !isOpen;
-    chatbotFrame.style.display = isOpen ? 'block' : 'none';
-    toggleBtn.textContent = isOpen ? '❌' : '💬';
+  // Message handler pour gérer l'expansion/réduction
+  window.addEventListener('message', function(event) {
+    if (event.data.type === 'expand') {
+      iframe.style.width = '420px';
+      iframe.style.height = '580px';
+    } else if (event.data.type === 'collapse') {
+      iframe.style.width = '100px';
+      iframe.style.height = '100px';
+    }
   });
+
+  document.body.appendChild(iframe);
+})();
 </script>
 
 </body>
