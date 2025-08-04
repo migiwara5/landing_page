@@ -84,36 +84,8 @@
   </div>
 </section>
 
-<!-- ✅ Script du chatbot parfaitement intégré -->
-<script>
-(function() {
-  const iframe = document.createElement('iframe');
-  iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd';
-  iframe.style.position = 'fixed';
-  iframe.style.bottom = '20px'; // Ancrage bas
-  iframe.style.right = '20px'; // Décalage du bord droit
-  iframe.style.width = '100px';
-  iframe.style.height = '100px';
-  iframe.style.maxHeight = '80vh'; // Ne dépasse jamais l'écran
-  iframe.style.border = 'none';
-  iframe.style.zIndex = '999999';
-  iframe.style.pointerEvents = 'auto';
-  iframe.style.background = 'transparent';
-  iframe.allow = 'clipboard-write';
-
-  window.addEventListener('message', function(event) {
-    if (event.data.type === 'expand') {
-      iframe.style.width = '420px';
-      iframe.style.height = '580px';
-    } else if (event.data.type === 'collapse') {
-      iframe.style.width = '100px';
-      iframe.style.height = '100px';
-    }
-  });
-
-  document.body.appendChild(iframe);
-})();
-</script>
+<!-- ✅ Script Lovable officiel -->
+<script src="https://plug-in-chat-gpt.lovable.app/embed.js?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd" async></script>
 
 </body>
 </html>
