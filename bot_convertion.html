@@ -32,24 +32,6 @@
       padding: 2rem;
       position: relative;
     }
-    .chat-button {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      background: #3b82f6;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .chat-button svg {
-      fill: white;
-      width: 24px;
-      height: 24px;
-    }
     footer {
       margin-top: 2rem;
       font-size: 0.8rem;
@@ -64,24 +46,26 @@
     <div style="text-align: center;">
       <img src="exemple.png" alt="Exemple de site" style="max-width: 100%; border-radius: 12px;" />
     </div>
-    <!-- Widget chatbot embed code -->
-    <script>
-      (function() {
-        const script = document.createElement('script');
-        script.src = "https://plug-in-chat-gpt.lovable.app/widget.js";
-        script.async = true;
-        script.onload = function() {
-          window.ChatGPTWidget.init({
-            id: "6cd14c52-ae0d-4126-be44-138c5d959f26",
-            position: "bottom-right"
-          });
-        };
-        document.body.appendChild(script);
-      })();
-    </script>
   </div>
   <footer>
     © 2025 — Powered by your AI chatbot engine.
   </footer>
+  <!-- Widget chatbot embed code -->
+  <script>
+    (function() {
+      const script = document.createElement('script');
+      script.src = "https://plug-in-chat-gpt.lovable.app/widget.js";
+      script.async = true;
+      script.onload = function() {
+        if (window.ChatGPTWidget) {
+          window.ChatGPTWidget.init({
+            id: "6cd14c52-ae0d-4126-be44-138c5d959f26",
+            position: "bottom-right"
+          });
+        }
+      };
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
