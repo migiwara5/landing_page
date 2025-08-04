@@ -1,4 +1,3 @@
 function switchLang(lang) {
   location.href = lang === 'fr' ? '/' : '/index_en.html';
 }
-
