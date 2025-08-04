@@ -137,29 +137,59 @@
     <button onclick="toggleTheme()">🌓</button>
   </div>
   <header>
-    <h1>Transformez n'importe quel PDF ou site web en assistant IA</h1>
-    <p>Créez un chatbot propulsé par GPT en quelques secondes — sans aucune ligne de code.</p>
+    <h1>Transformez n'importe quel PDF ou site en assistant IA</h1>
+    <p>Créez un chatbot GPT en quelques secondes — sans coder.</p>
     <a class="cta" href="https://your-bot-link.com">Tester le bot</a>
   </header>
 
   <div class="grid">
-    <div class="card"><strong>Startup</strong> : FAQ automatique à partir de votre site</div>
-    <div class="card"><strong>Coach</strong> : chatbot entraîné sur vos guides PDF</div>
-    <div class="card"><strong>Commerce local</strong> : assistant client intelligent 24/7</div>
+    <div class="card"><strong>Startup</strong> : FAQ auto depuis votre site web</div>
+    <div class="card"><strong>Coach</strong> : Chatbot formé sur vos guides PDF</div>
+    <div class="card"><strong>PME locale</strong> : Assistant client intelligent 24/7</div>
   </div>
 
   <div class="contact-form">
     <h3>Contactez-moi</h3>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Nom" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Votre message" rows="4" required></textarea>
-      <button type="submit">Envoyer</button>
+    <form action="https://formspree.io/f/xvgqbeqw" method="POST" id="contactForm">
+      <input type="text" name="name" placeholder="Votre nom *" required />
+      <input type="text" name="company" placeholder="Société (facultatif)" />
+      <input type="email" name="email" placeholder="Email *" required />
+      <textarea name="message" placeholder="Votre message *" rows="4" required></textarea>
+      <button type="submit">Envoyer le message</button>
+      <p id="confirmationMessage" style="color: green; display: none; margin-top: 10px;">
+        ✅ Votre message a bien été reçu. Je reviendrai vers vous rapidement !
+      </p>
     </form>
   </div>
 
   <footer>
     © 2025 – Conçu pour démocratiser l'IA • <a href="https://plausible.io" target="_blank">Analytics</a>
   </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const confirmation = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        confirmation.style.display = 'block';
+        confirmation.style.color = 'green';
+        confirmation.innerText = '✅ Votre message a bien été reçu. Je reviendrai vers vous rapidement !';
+      } else {
+        confirmation.style.display = 'block';
+        confirmation.style.color = 'red';
+        confirmation.innerText = '❌ Une erreur est survenue. Merci de réessayer plus tard.';
+      }
+    });
+  </script>
 </body>
 </html>
