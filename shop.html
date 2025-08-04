@@ -84,18 +84,17 @@
   </div>
 </section>
 
-<!-- ✅ Script chatbot corrigé pour affichage complet -->
+<!-- ✅ Script du chatbot parfaitement intégré -->
 <script>
 (function() {
   const iframe = document.createElement('iframe');
   iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd';
   iframe.style.position = 'fixed';
-  iframe.style.top = 'calc(100vh - 600px)';
-  iframe.style.bottom = 'auto';
-  iframe.style.right = '20px';
+  iframe.style.bottom = '20px'; // Ancrage bas
+  iframe.style.right = '20px'; // Décalage du bord droit
   iframe.style.width = '100px';
   iframe.style.height = '100px';
-  iframe.style.maxHeight = '100vh';
+  iframe.style.maxHeight = '80vh'; // Ne dépasse jamais l'écran
   iframe.style.border = 'none';
   iframe.style.zIndex = '999999';
   iframe.style.pointerEvents = 'auto';
@@ -106,11 +105,9 @@
     if (event.data.type === 'expand') {
       iframe.style.width = '420px';
       iframe.style.height = '580px';
-      iframe.style.top = 'calc(100vh - 600px)'; // Réajuste au cas où
     } else if (event.data.type === 'collapse') {
       iframe.style.width = '100px';
       iframe.style.height = '100px';
-      iframe.style.top = 'calc(100vh - 120px)'; // descend la bulle
     }
   });
 
