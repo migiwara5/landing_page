@@ -14,10 +14,10 @@
       background: #f9fafb;
       color: #111;
       overflow: visible;
+      position: relative;
+      z-index: 1;
     }
     body {
-      position: relative;
-      z-index: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -28,53 +28,26 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
     p {
       font-size: 1.25rem;
       max-width: 600px;
       margin-bottom: 2rem;
       color: #333;
+      position: relative;
+      z-index: 1;
     }
     footer {
       margin-top: 3rem;
       font-size: 0.8rem;
       color: #888;
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
   <h1>Is your website working while you sleep?</h1>
   <p>Smart businesses use AI chatbots to greet visitors, answer questions, guide purchases, and generate leads — automatically, 24/7.</p>
-  <footer>
-    © 2025 — Powered by your AI chatbot engine.
-  </footer>
-  <script>
-    (function() {
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://preview--plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd';
-      iframe.style.position = 'fixed';
-      iframe.style.bottom = '0px';
-      iframe.style.right = '0px';
-      iframe.style.width = '100px';
-      iframe.style.height = '100px';
-      iframe.style.border = 'none';
-      iframe.style.zIndex = '2147483647';
-      iframe.style.pointerEvents = 'auto';
-      iframe.style.background = 'transparent';
-      iframe.allow = 'clipboard-write';
-
-      window.addEventListener('message', function(event) {
-        if (event.data.type === 'expand') {
-          iframe.style.width = '420px';
-          iframe.style.height = '580px';
-        } else if (event.data.type === 'collapse') {
-          iframe.style.width = '100px';
-          iframe.style.height = '100px';
-        }
-      });
-
-      document.body.appendChild(iframe);
-    })();
-  </script>
-</body>
-</html>
