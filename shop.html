@@ -33,6 +33,7 @@
     }
     .product img {
       width: 100%;
+      height: auto;
       border-radius: 6px;
     }
     .product h3 {
@@ -40,6 +41,7 @@
     }
     .product p {
       margin: 5px 0;
+      font-weight: bold;
     }
     .product button {
       margin-top: 10px;
@@ -64,39 +66,41 @@
 
 <section class="products">
   <div class="product">
-    <img src="https://via.placeholder.com/200x150" alt="Produit 1">
+    <img src="https://via.placeholder.com/200x150?text=Produit+1" alt="Produit 1">
     <h3>T-shirt Blanc</h3>
     <p>19,99 €</p>
     <button>Ajouter au panier</button>
   </div>
   <div class="product">
-    <img src="https://via.placeholder.com/200x150" alt="Produit 2">
+    <img src="https://via.placeholder.com/200x150?text=Produit+2" alt="Produit 2">
     <h3>Casquette Noire</h3>
     <p>14,99 €</p>
     <button>Ajouter au panier</button>
   </div>
   <div class="product">
-    <img src="https://via.placeholder.com/200x150" alt="Produit 3">
+    <img src="https://via.placeholder.com/200x150?text=Produit+3" alt="Produit 3">
     <h3>Sweat Gris</h3>
     <p>39,99 €</p>
     <button>Ajouter au panier</button>
   </div>
 </section>
 
-<!-- Code d'intégration du bot -->
+<!-- Code d'intégration du bot avec positionnement ajusté -->
 <script>
 (function() {
   const iframe = document.createElement('iframe');
   iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd';
   iframe.style.position = 'fixed';
-  iframe.style.bottom = '0px';
-  iframe.style.right = '0px';
-  iframe.style.width = '100px';
-  iframe.style.height = '100px';
+  iframe.style.bottom = '100px'; // au-dessus de la bulle
+  iframe.style.right = '20px';
+  iframe.style.width = '420px';
+  iframe.style.height = '580px';
+  iframe.style.maxHeight = '80vh';
   iframe.style.border = 'none';
   iframe.style.zIndex = '999999';
   iframe.style.pointerEvents = 'auto';
-  iframe.style.background = 'transparent';
+  iframe.style.backgroundColor = '#ffffff';
+  iframe.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
   iframe.allow = 'clipboard-write';
 
   window.addEventListener('message', function(event) {
@@ -115,4 +119,3 @@
 
 </body>
 </html>
-
