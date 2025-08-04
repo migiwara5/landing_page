@@ -1,5 +1,4 @@
-{
-  "rewrites": [
-    { "source": "/index_en", "destination": "/index_en.html" }
-  ]
+function switchLang(lang) {
+  location.href = lang === 'fr' ? '/' : '/index_en.html';
 }
+
