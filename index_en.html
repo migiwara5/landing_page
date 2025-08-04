@@ -143,23 +143,53 @@
   </header>
 
   <div class="grid">
-    <div class="card"><strong>Startup</strong>: auto-FAQ from your site</div>
-    <div class="card"><strong>Coach</strong>: chatbot trained on your PDF guides</div>
-    <div class="card"><strong>Local business</strong>: 24/7 smart customer assistant</div>
+    <div class="card"><strong>Startup</strong>: Auto-FAQ from your website</div>
+    <div class="card"><strong>Coach</strong>: Chatbot trained on your PDF guides</div>
+    <div class="card"><strong>Local Business</strong>: Smart customer assistant 24/7</div>
   </div>
 
   <div class="contact-form">
     <h3>Contact me</h3>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Your message" rows="4" required></textarea>
-      <button type="submit">Send</button>
+    <form action="https://formspree.io/f/xvgqbeqw" method="POST" id="contactForm">
+      <input type="text" name="name" placeholder="Your name *" required />
+      <input type="text" name="company" placeholder="Company (optional)" />
+      <input type="email" name="email" placeholder="Email *" required />
+      <textarea name="message" placeholder="Your message *" rows="4" required></textarea>
+      <button type="submit">Send message</button>
+      <p id="confirmationMessage" style="color: green; display: none; margin-top: 10px;">
+        ✅ Your message has been received. I'll get back to you shortly!
+      </p>
     </form>
   </div>
 
   <footer>
-    © 2025 – Built to democratize AI • <a href="https://plausible.io" target="_blank">Analytics</a>
+    © 2025 – Designed to democratize AI • <a href="https://plausible.io" target="_blank">Analytics</a>
   </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const confirmation = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        confirmation.style.display = 'block';
+        confirmation.style.color = 'green';
+        confirmation.innerText = '✅ Your message has been received. I\'ll get back to you shortly!';
+      } else {
+        confirmation.style.display = 'block';
+        confirmation.style.color = 'red';
+        confirmation.innerText = '❌ Something went wrong. Please try again later.';
+      }
+    });
+  </script>
 </body>
 </html>
