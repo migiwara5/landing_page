@@ -84,11 +84,11 @@
   </div>
 </section>
 
-<!-- ✅ Script du bot Lovable personnalisé -->
+<!-- ✅ Ton script Lovable -->
 <script>
 (function() {
   const iframe = document.createElement('iframe');
-  iframe.src = 'https://732b1250-7b72-4814-9d23-0af0892cb212.lovableproject.com/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd';
+  iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd';
   iframe.style.position = 'fixed';
   iframe.style.bottom = '0px';
   iframe.style.right = '0px';
@@ -100,7 +100,7 @@
   iframe.style.background = 'transparent';
   iframe.allow = 'clipboard-write';
 
-  // Gestion ouverture / fermeture via postMessage
+  // Message handler pour gérer l'expansion/réduction
   window.addEventListener('message', function(event) {
     if (event.data.type === 'expand') {
       iframe.style.width = '420px';
