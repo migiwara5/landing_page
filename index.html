@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT Bot en 30s</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #fff;
+      --fg-light: #111;
+      --bg-dark: #111827;
+      --fg-dark: #f9fafb;
+      --primary: #6366f1;
+      --accent: #4f46e5;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--fg-light);
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--fg-dark);
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      background: #f9fafb;
+    }
+    body.dark .card {
+      background: #1f2937;
+      border-color: #374151;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 2rem 1rem;
+      color: #666;
+    }
+    body.dark footer {
+      color: #aaa;
+    }
+    .topright {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+    .topright button {
+      margin-left: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 6px;
+      background: #eee;
+      cursor: pointer;
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+    function switchLang(lang) {
+      location.href = lang === 'en' ? 'index_en.html' : 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <div class="topright">
+    <button onclick="switchLang('fr')">FR</button>
+    <button onclick="switchLang('en')">EN</button>
+    <button onclick="toggleTheme()">🌓</button>
+  </div>
+  <header>
+    <h1>Transformez un PDF ou site en assistant IA</h1>
+    <p>Créez un bot ultra précis en quelques secondes, sans une ligne de code.</p>
+    <a class="cta" href="https://your-bot-link.com">Tester le bot</a>
+  </header>
+
+  <div class="grid">
+    <div class="card"><strong>Startup</strong> : FAQ automatique depuis votre site</div>
+    <div class="card"><strong>Coach</strong> : bot basé sur vos PDF</div>
+    <div class="card"><strong>Commerce local</strong> : assistant client 24/7</div>
+  </div>
+
+  <div class="contact-form">
+    <h3>Me contacter</h3>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Nom" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Votre message" rows="4" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 - Créé pour démocratiser l’IA • <a href="https://plausible.io" target="_blank">Analytics</a>
+  </footer>
+  <script defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script>
+</body>
+</html>
