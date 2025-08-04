@@ -3,68 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why You Need a Chatbot</title>
+  <title>Convince Bot</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
+      margin: 0;
+      background: #f9fafb;
       color: #111;
-    }
-    header {
-      padding: 2rem;
       text-align: center;
+      padding: 2rem;
     }
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
     }
     p {
-      font-size: 1rem;
-      color: #444;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #333;
     }
-    iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-      border-top: 1px solid #ddd;
+    .box {
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 800px;
+      padding: 2rem;
+      position: relative;
     }
-    .fake-site {
-      padding: 1rem;
-      background: #fff;
-      margin: 2rem auto;
-      max-width: 700px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border-radius: 10px;
+    .chat-button {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: #3b82f6;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .fake-site h2 {
-      margin-top: 0;
+    .chat-button svg {
+      fill: white;
+      width: 24px;
+      height: 24px;
     }
     footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #999;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Could a chatbot actually help your business?</h1>
-    <p>Let our assistant walk you through the benefits — tailored to your specific case.</p>
-  </header>
-
-  <div class="fake-site">
-    <h2>Welcome to My Smart Business</h2>
-    <p>We're exploring how an intelligent chatbot can help boost customer engagement, reduce response times, and convert more visitors. Got questions? Our bot can answer.</p>
+  <h1>Is Your Website Working Hard Enough?</h1>
+  <p>Discover how a smart <strong><span style="color: #3b82f6">AI assistant</span></strong> can transform your visitors into clients — 24/7, without extra staff.</p>
+  <div class="box">
+    <div style="text-align: center;">
+      <img src="exemple.png" alt="Exemple de site" style="max-width: 100%; border-radius: 12px;" />
+    </div>
+    <div class="chat-button">
+      <svg viewBox="0 0 24 24"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.19 1.1 4.18 2.93 5.63L4 21l4.72-1.46C10.29 20 11.13 20 12 20c5.52 0 10-3.58 10-9s-4.48-8-10-8z"></path></svg>
+    </div>
   </div>
-
-  <!-- Replace the ID with your actual Lovable bot ID -->
-  <iframe src="https://plug-in-chat-gpt.lovable.app/widget?id=YOUR_BOT_ID_HERE"></iframe>
-
   <footer>
-    © 2025 My Smart Business • Easily
+    © 2025 — Powered by your AI chatbot engine.
   </footer>
 </body>
 </html>
