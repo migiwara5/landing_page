@@ -13,6 +13,8 @@
       color: #111;
       text-align: center;
       padding: 4rem 1rem 8rem;
+      position: relative;
+      z-index: 0;
     }
     h1 {
       font-size: 2.5rem;
@@ -63,7 +65,7 @@
       iframe.style.width = '100px';
       iframe.style.height = '100px';
       iframe.style.border = 'none';
-      iframe.style.zIndex = '100000';
+      iframe.style.zIndex = '999999';
       iframe.style.pointerEvents = 'auto';
       iframe.style.background = 'transparent';
       iframe.allow = 'clipboard-write';
