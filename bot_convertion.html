@@ -37,6 +37,13 @@
       font-size: 0.8rem;
       color: #888;
     }
+    iframe.chatbot {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -44,40 +51,16 @@
   <p>Discover how a smart <strong><span style="color: #3b82f6">AI assistant</span></strong> can transform your visitors into clients — 24/7, without extra staff.</p>
   <div class="box">
     <div style="text-align: center;">
-      <img src="exemple.png" alt="Exemple de site" style="max-width: 100%; border-radius: 12px;" />
+      <img src="exemple.png" alt="Exemple de site" style="max-width: 100%; border-radius: 12px; margin-bottom: 2rem;" />
+      <iframe 
+        src="https://plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd" 
+        class="chatbot"
+        allow="clipboard-write">
+      </iframe>
     </div>
   </div>
   <footer>
-    © 2025 — Powered by your AI chatbot engine.
+    © 2025 - Powered by Mugiwara - Make IA accessible
   </footer>
-  <!-- Widget chatbot embed code -->
-  <script>
-    (function() {
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd';
-      iframe.style.position = 'fixed';
-      iframe.style.bottom = '0px';
-      iframe.style.right = '0px';
-      iframe.style.width = '100px';
-      iframe.style.height = '100px';
-      iframe.style.border = 'none';
-      iframe.style.zIndex = '999999';
-      iframe.style.pointerEvents = 'auto';
-      iframe.style.background = 'transparent';
-      iframe.allow = 'clipboard-write';
-
-      window.addEventListener('message', function(event) {
-        if (event.data.type === 'expand') {
-          iframe.style.width = '420px';
-          iframe.style.height = '580px';
-        } else if (event.data.type === 'collapse') {
-          iframe.style.width = '100px';
-          iframe.style.height = '100px';
-        }
-      });
-
-      document.body.appendChild(iframe);
-    })();
-  </script>
 </body>
 </html>
