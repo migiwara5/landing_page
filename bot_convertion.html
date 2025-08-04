@@ -64,12 +64,24 @@
     <div style="text-align: center;">
       <img src="exemple.png" alt="Exemple de site" style="max-width: 100%; border-radius: 12px;" />
     </div>
-    <div class="chat-button">
-      <svg viewBox="0 0 24 24"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.19 1.1 4.18 2.93 5.63L4 21l4.72-1.46C10.29 20 11.13 20 12 20c5.52 0 10-3.58 10-9s-4.48-8-10-8z"></path></svg>
-    </div>
+    <!-- Widget chatbot embed code -->
+    <script>
+      (function() {
+        const script = document.createElement('script');
+        script.src = "https://plug-in-chat-gpt.lovable.app/widget.js";
+        script.async = true;
+        script.onload = function() {
+          window.ChatGPTWidget.init({
+            id: "6cd14c52-ae0d-4126-be44-138c5d959f26",
+            position: "bottom-right"
+          });
+        };
+        document.body.appendChild(script);
+      })();
+    </script>
   </div>
   <footer>
-    © 2025 - Powered by Mugiwara with Love - Make AI accessible
+    © 2025 — Powered by your AI chatbot engine.
   </footer>
 </body>
 </html>
