@@ -40,20 +40,6 @@
       font-size: 0.8rem;
       color: #888;
     }
-    iframe.bot-iframe {
-      position: fixed !important;
-      bottom: 20px;
-      right: 20px;
-      width: 100px;
-      height: 100px;
-      border: none;
-      z-index: 2147483647 !important;
-      pointer-events: auto;
-      background: transparent;
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
   </style>
 </head>
 <body>
@@ -65,8 +51,19 @@
   <script>
     window.addEventListener("DOMContentLoaded", function () {
       const iframe = document.createElement('iframe');
-      iframe.className = 'bot-iframe';
       iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd';
+      iframe.style.position = 'fixed';
+      iframe.style.bottom = '20px';
+      iframe.style.right = '20px';
+      iframe.style.width = '100px';
+      iframe.style.height = '100px';
+      iframe.style.border = 'none';
+      iframe.style.zIndex = '999999999';
+      iframe.style.pointerEvents = 'auto';
+      iframe.style.background = 'transparent';
+      iframe.style.display = 'block';
+      iframe.style.visibility = 'visible';
+      iframe.style.opacity = '1';
       iframe.allow = 'clipboard-write';
 
       window.addEventListener('message', function(event) {
