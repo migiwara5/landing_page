@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPT Bot en 30s</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYZLQPFM17"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CYZLQPFM17');
+  </script>
   <style>
     :root {
       --bg-light: #fff;
@@ -91,7 +99,8 @@
       padding: 1rem;
       text-align: center;
     }
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 0.8rem;
       margin: 0.5rem 0;
@@ -117,7 +126,7 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
     function switchLang(lang) {
-     location.href = lang === 'fr' ? '/' : '/index_en.html';
+      location.href = lang === 'fr' ? '/' : '/index_en.html';
     }
   </script>
 </head>
@@ -128,26 +137,29 @@
     <button onclick="toggleTheme()">🌓</button>
   </div>
   <header>
-    <h1>Transformez un PDF ou site en assistant IA</h1>
-    <p>Créez un bot ultra précis en quelques secondes, sans une ligne de code.</p>
+    <h1>Transformez n'importe quel PDF ou site web en assistant IA</h1>
+    <p>Créez un chatbot propulsé par GPT en quelques secondes — sans aucune ligne de code.</p>
     <a class="cta" href="https://your-bot-link.com">Tester le bot</a>
   </header>
+
   <div class="grid">
-    <div class="card"><strong>Startup</strong> : FAQ automatique depuis votre site</div>
-    <div class="card"><strong>Coach</strong> : bot basé sur vos PDF</div>
-    <div class="card"><strong>Commerce local</strong> : assistant client 24/7</div>
+    <div class="card"><strong>Startup</strong> : FAQ automatique à partir de votre site</div>
+    <div class="card"><strong>Coach</strong> : chatbot entraîné sur vos guides PDF</div>
+    <div class="card"><strong>Commerce local</strong> : assistant client intelligent 24/7</div>
   </div>
+
   <div class="contact-form">
-    <h3>Me contacter</h3>
+    <h3>Contactez-moi</h3>
     <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Nom" required>
-      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="name" placeholder="Nom" required />
+      <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Votre message" rows="4" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
   </div>
+
   <footer>
-    © 2025 - Créé pour démocratiser l’IA • <a href="https://plausible.io" target="_blank">Analytics</a>
+    © 2025 – Conçu pour démocratiser l'IA • <a href="https://plausible.io" target="_blank">Analytics</a>
   </footer>
 </body>
 </html>
