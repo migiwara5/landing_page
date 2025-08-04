@@ -49,21 +49,18 @@
     © 2025 — Powered by your AI chatbot engine.
   </footer>
   <script>
-    window.addEventListener("DOMContentLoaded", function () {
+    (function() {
       const iframe = document.createElement('iframe');
-      iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd';
+      iframe.src = 'https://preview--plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd';
       iframe.style.position = 'fixed';
-      iframe.style.bottom = '20px';
-      iframe.style.right = '20px';
+      iframe.style.bottom = '0px';
+      iframe.style.right = '0px';
       iframe.style.width = '100px';
       iframe.style.height = '100px';
       iframe.style.border = 'none';
-      iframe.style.zIndex = '999999999';
+      iframe.style.zIndex = '2147483647';
       iframe.style.pointerEvents = 'auto';
       iframe.style.background = 'transparent';
-      iframe.style.display = 'block';
-      iframe.style.visibility = 'visible';
-      iframe.style.opacity = '1';
       iframe.allow = 'clipboard-write';
 
       window.addEventListener('message', function(event) {
@@ -77,7 +74,7 @@
       });
 
       document.body.appendChild(iframe);
-    });
+    })();
   </script>
 </body>
 </html>
