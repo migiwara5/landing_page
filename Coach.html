@@ -78,6 +78,36 @@
   </footer>
 
   <!-- Chatbot iframe intégré (exemple) -->
-  <script> (function() { const iframe = document.createElement('iframe'); iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd'; iframe.style.position = 'fixed'; iframe.style.bottom = '0px'; iframe.style.right = '0px'; iframe.style.width = '100px'; iframe.style.height = '100px'; iframe.style.border = 'none'; iframe.style.zIndex = '999999'; iframe.style.pointerEvents = 'auto'; iframe.style.background = 'transparent'; iframe.allow = 'clipboard-write'; // Message handler pour gérer l'expansion/réduction window.addEventListener('message', function(event) { if (event.data.type === 'expand') { iframe.style.width = '420px'; iframe.style.height = '580px'; } else if (event.data.type === 'collapse') { iframe.style.width = '100px'; iframe.style.height = '100px'; } }); document.body.appendChild(iframe); })(); </script>
-</body>
+
+ <script>
+    (function () {
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=TON_ID_DEMO';
+      iframe.style.position = 'fixed';
+      iframe.style.bottom = '20px';
+      iframe.style.right = '20px';
+      iframe.style.width = '100px';
+      iframe.style.height = '100px';
+      iframe.style.border = 'none';
+      iframe.style.zIndex = '9999';
+      iframe.style.borderRadius = '50%';
+      iframe.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+      iframe.allow = 'clipboard-write';
+
+      // Message handler pour expansion/réduction
+      window.addEventListener('message', function (event) {
+        if (event.data.type === 'expand') {
+          iframe.style.width = '420px';
+          iframe.style.height = '580px';
+        } else if (event.data.type === 'collapse') {
+          iframe.style.width = '100px';
+          iframe.style.height = '100px';
+        }
+      });
+
+      document.body.appendChild(iframe);
+    })();
+  </script>
+  
+ </body>
 </html>
