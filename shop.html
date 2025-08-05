@@ -55,14 +55,6 @@
     .product button:hover {
       background-color: #0056b3;
     }
-
-    /* Ajout de respiration externe par transform */
-    .chatbot-wrapper {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999999;
-    }
   </style>
 </head>
 <body>
@@ -76,3 +68,55 @@
   <div class="product">
     <img src="https://via.placeholder.com/200x150?text=Produit+1" alt="Produit 1">
     <h3>T-shirt Blanc</h3>
+    <p>19,99 €</p>
+    <button>Ajouter au panier</button>
+  </div>
+  <div class="product">
+    <img src="https://via.placeholder.com/200x150?text=Produit+2" alt="Produit 2">
+    <h3>Casquette Noire</h3>
+    <p>14,99 €</p>
+    <button>Ajouter au panier</button>
+  </div>
+  <div class="product">
+    <img src="https://via.placeholder.com/200x150?text=Produit+3" alt="Produit 3">
+    <h3>Sweat Gris</h3>
+    <p>39,99 €</p>
+    <button>Ajouter au panier</button>
+  </div>
+</section>
+
+<!-- ✅ Chatbot avec marge et sans scroll -->
+<script>
+(function() {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://plug-in-chat-gpt.lovable.app/widget?id=4c50fc42-6eef-4c3b-90c0-f0ba470dc5fd';
+  iframe.style.position = 'fixed';
+  iframe.style.bottom = '20px'; // 👈 marge en bas
+  iframe.style.right = '20px';  // 👈 marge à droite
+  iframe.style.width = '100px';
+  iframe.style.height = '100px';
+  iframe.style.border = 'none';
+  iframe.style.zIndex = '999999';
+  iframe.style.pointerEvents = 'auto';
+  iframe.style.background = 'transparent';
+  iframe.style.overflow = 'hidden';
+  iframe.allow = 'clipboard-write';
+  iframe.scrolling = 'no';
+  iframe.frameBorder = '0';
+
+  window.addEventListener('message', function(event) {
+    if (event.data.type === 'expand') {
+      iframe.style.width = '420px';
+      iframe.style.height = '580px';
+    } else if (event.data.type === 'collapse') {
+      iframe.style.width = '100px';
+      iframe.style.height = '100px';
+    }
+  });
+
+  document.body.appendChild(iframe);
+})();
+</script>
+
+</body>
+</html>
