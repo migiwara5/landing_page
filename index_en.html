@@ -190,6 +190,37 @@
         confirmation.innerText = '❌ Something went wrong. Please try again later.';
       }
     });
-  </script>
+
+(function() {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://plug-in-chat-gpt.lovable.app/standalone-widget?id=9cb863bc-ecb8-4b24-a209-4941f74b52cd';
+  iframe.style.position = 'fixed';
+  iframe.style.bottom = '20px';
+  iframe.style.right = '20px';
+  iframe.style.width = '100px';
+  iframe.style.height = '100px';
+  iframe.style.border = 'none';
+  iframe.style.zIndex = '999999';
+  iframe.style.pointerEvents = 'auto';
+  iframe.style.background = 'transparent';
+  iframe.style.overflow = 'hidden';
+  iframe.allow = 'clipboard-write';
+  iframe.scrolling = 'no';
+  iframe.frameBorder = '0';
+
+  window.addEventListener('message', function(event) {
+    if (event.data.type === 'expand') {
+      iframe.style.width = '420px';
+      iframe.style.height = '580px';
+    } else if (event.data.type === 'collapse') {
+      iframe.style.width = '100px';
+      iframe.style.height = '100px';
+    }
+  });
+
+  document.body.appendChild(iframe);
+})();
+</script>
+  
 </body>
 </html>
