@@ -1,1 +1,121 @@
-Boulangerie à faire
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bready Bakery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff8f0;
+      color: #3e2a1d;
+    }
+
+    header {
+      background-color: #f5deb3;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .hero {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    .product h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .product p {
+      font-size: 0.95rem;
+      margin: 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #f5deb3;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bready Bakery</h1>
+    <p>Fresh. Local. Delicious. Since 1928.</p>
+  </header>
+
+  <section class="hero">
+    <h2>Discover Our Most Loved Creations</h2>
+    <p>Every bite is crafted with care and quality ingredients.</p>
+  </section>
+
+  <section class="product-list">
+    <div class="product">
+      <h3>🥖 Baguette Tradition</h3>
+      <p><strong>Price:</strong> 1.20 EUR</p>
+      <p><strong>Ingredients:</strong> Wheat flour, water, salt, yeast</p>
+      <p><strong>Allergens:</strong> Gluten</p>
+    </div>
+    <div class="product">
+      <h3>🥐 Croissant</h3>
+      <p><strong>Price:</strong> 1.30 EUR</p>
+      <p><strong>Ingredients:</strong> Wheat flour, butter, sugar, eggs, milk, yeast</p>
+      <p><strong>Allergens:</strong> Gluten, Milk, Eggs</p>
+    </div>
+    <div class="product">
+      <h3>🍫 Pain au Chocolat</h3>
+      <p><strong>Price:</strong> 1.40 EUR</p>
+      <p><strong>Ingredients:</strong> Wheat flour, butter, chocolate, sugar, eggs, milk, yeast</p>
+      <p><strong>Allergens:</strong> Gluten, Milk, Eggs, Soy</p>
+    </div>
+    <div class="product">
+      <h3>🍞 Brioche</h3>
+      <p><strong>Price:</strong> 3.50 EUR</p>
+      <p><strong>Ingredients:</strong> Wheat flour, butter, sugar, eggs, milk, yeast</p>
+      <p><strong>Allergens:</strong> Gluten, Milk, Eggs</p>
+    </div>
+    <!-- Ajoute d'autres produits ici si besoin -->
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bready Bakery. All rights reserved.</p>
+  </footer>
+</body>
+</html>
